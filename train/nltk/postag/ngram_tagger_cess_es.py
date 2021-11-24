@@ -1,15 +1,16 @@
 from random import shuffle
-from json_database import JsonStorageXDG
-import nltk
+
 import joblib
+import nltk
+from json_database import JsonStorageXDG
 
-
-db = JsonStorageXDG("nltk_cess_cat_ngram_tagger", subfolder="ModelZoo/nltk")
+db = JsonStorageXDG("nltk_cess_esp_ngram_tagger", subfolder="ModelZoo/nltk")
 MODEL_META = {
-    "corpus": "cess_cat",
+    "corpus": "cess_esp",
     "corpus_homepage": "https://web.archive.org/web/20121023154634/http://clic.ub.edu/cessece/",
-    "lang": "ca",
-    "model_id": "nltk_cess_cat_ngram_tagger",
+    "lang": "es",
+    "model_id": "nltk_cess_esp_ngram_tagger",
+    "algo": "TrigramTagger",
     "tagset": "EAGLES",
     "tagset_homepage": "http://www.ilc.cnr.it/EAGLES96/annotate/annotate.html",
     "backoff_taggers": ["AffixTagger", "UnigramTagger",
@@ -22,7 +23,7 @@ model_path = db.path.replace(".json", ".pkl")
 print(model_path)
 # EAGLES
 # http://www.ilc.cnr.it/EAGLES96/annotate/annotate.html
-nltk.download('cess_cat')
+nltk.download('cess_esp')
 
 corpus = [sent for sent in nltk.corpus.cess_cat.tagged_sents()]
 shuffle(corpus)
@@ -50,4 +51,3 @@ db["accuracy"] = a
 db.store()
 
 joblib.dump(tagger, model_path)
-

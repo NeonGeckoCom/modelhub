@@ -12,6 +12,7 @@ MODEL_META = {
     "model_id": "nltk_floresta_macmorpho_ngram_tagger",
     "corpus_homepage": "https://www.nltk.org/nltk_data",
     "tagset": "Universal Dependencies",
+    "algo": "TrigramTagger",
     "backoff_taggers": ["DefaultTagger", "AffixTagger", "UnigramTagger",
                         "RegexpTagger", "BigramTagger", "TrigramTagger"],
     "required_packages": ["nltk"]

@@ -1,8 +1,8 @@
 from random import shuffle
-from json_database import JsonStorageXDG
-import nltk
-import joblib
 
+import joblib
+import nltk
+from json_database import JsonStorageXDG
 
 db = JsonStorageXDG("nltk_cess_esp_brill_tagger", subfolder="ModelZoo/nltk")
 MODEL_META = {

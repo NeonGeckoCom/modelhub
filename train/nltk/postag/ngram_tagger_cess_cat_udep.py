@@ -2,8 +2,9 @@ from random import shuffle
 
 import joblib
 import nltk
-import biblioteca
 from json_database import JsonStorageXDG
+
+import biblioteca
 
 biblioteca.download("cess_cat_udep")
 cess = biblioteca.load_corpus("cess_cat_udep")

@@ -1,3 +1,11 @@
+import json
+from os.path import dirname
+from os.path import join
+from random import shuffle
+from string import punctuation
+
+import joblib
+import nltk
 from random import shuffle
 from string import punctuation
 
@@ -5,28 +13,26 @@ import joblib
 import nltk
 from json_database import JsonStorageXDG
 
-db = JsonStorageXDG("nltk_floresta_macmorpho_brill_tagger", subfolder="ModelZoo/nltk")
+db = JsonStorageXDG("nltk_macmorpho_udep_brill_tagger", subfolder="ModelZoo/nltk")
 MODEL_META = {
-    "corpus": "floresta + macmorpho",
-    "lang": "pt",
-    "model_id": "nltk_floresta_macmorpho_brill_tagger",
-    "corpus_homepage": "https://www.nltk.org/nltk_data",
+    "corpus": "macmorpho",
+    "corpus_homepage": "http://www.nilc.icmc.usp.br/lacioweb/",
+    "model_id": "nltk_macmorpho_udep_brill_tagger",
     "tagset": "Universal Dependencies",
+    "lang": "pt",
     "algo": "nltk.brill.fntbl37",
     "backoff_taggers": ["DefaultTagger", "AffixTagger", "UnigramTagger",
                         "RegexpTagger", "BigramTagger", "TrigramTagger"],
     "required_packages": ["nltk"]
 }
-
 db.update(MODEL_META)
 db.store()
 model_path = db.path.replace(".json", ".pkl")
 
 nltk.download('mac_morpho')
-nltk.download('floresta')
 
 
-def convert_to_universal_tag(t, reverse=False):
+def convert_to_universal_tag(t, reverse=True):
     tagdict = {
         'n': "NOUN",
         'num': "NUM",
@@ -86,34 +92,18 @@ def convert_to_universal_tag(t, reverse=False):
     return tagdict.get(t, "." if all(tt in punctuation for tt in t) else t)
 
 
-mac_morpho = [
-    [(w, convert_to_universal_tag(t, reverse=True)) for (w, t) in sent]
-    for sent in nltk.corpus.mac_morpho.tagged_sents()]
+dataset = [[(w, convert_to_universal_tag(t)) for (w, t) in sent]
+           for sent in nltk.corpus.mac_morpho.tagged_sents()]
 
-floresta = [[(w, convert_to_universal_tag(t)) for (w, t) in sent]
-            for sent in nltk.corpus.floresta.tagged_sents()]
-
-dataset = floresta + mac_morpho
 shuffle(dataset)
 
-cutoff = int(len(dataset) * 0.9)
+cutoff = int(len(dataset) * 0.8)
 train_data = dataset[:cutoff]
 test_data = dataset[cutoff:]
 
-regex_patterns = [
-    (r"^[nN][ao]s?$", "ADP"),
-    (r"^[dD][ao]s?$", "ADP"),
-    (r"^[pP]el[ao]s?$", "ADP"),
-    (r"^[nN]est[ae]s?$", "ADP"),
-    (r"^[nN]um$", "ADP"),
-    (r"^[nN]ess[ae]s?$", "ADP"),
-    (r"^[nN]aquel[ae]s?$", "ADP"),
-    (r"^\xe0$", "ADP"),
-]
-
 ngram_tagger = joblib.load(model_path.replace("brill", "ngram"))
 tagger = nltk.BrillTaggerTrainer(ngram_tagger, nltk.brill.fntbl37())
-tagger = tagger.train(train_data, max_rules=100)
+tagger = tagger.train(train_data)
 
 a = tagger.evaluate(test_data)
 db["accuracy"] = a
