@@ -1,0 +1,19 @@
+{
+    "corpus": "floresta + macmorpho",
+    "lang": "pt",
+    "model_id": "nltk_floresta_macmorpho_ngram_tagger",
+    "corpus_homepage": "https://www.nltk.org/nltk_data",
+    "tagset": "Universal Dependencies",
+    "backoff_taggers": [
+        "DefaultTagger",
+        "AffixTagger",
+        "UnigramTagger",
+        "RegexpTagger",
+        "BigramTagger",
+        "TrigramTagger"
+    ],
+    "required_packages": [
+        "nltk"
+    ],
+    "accuracy": 0.9432349772607316
+}
