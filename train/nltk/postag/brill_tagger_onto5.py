@@ -5,6 +5,8 @@ import joblib
 import nltk
 from json_database import JsonStorageXDG
 
+from neon_modelhub import load_model
+
 db = JsonStorageXDG("nltk_onto5_brill_tagger", subfolder="ModelZoo/nltk")
 MODEL_META = {
     "corpus": "OntoNotes-5.0-NER-BIO",
@@ -50,7 +52,7 @@ def read_ontonotes5(corpus_root):
                         yield toks
 
 
-corpus_root = "/home/user/PycharmProjects/nlp_workspace/biblioteca/corpora/OntoNotes-5.0-NER-BIO"
+corpus_root = "/home/user/PycharmProjects/nlp_workspace/biblioteca/corpora/onto5"
 reader = read_ontonotes5(corpus_root)
 
 data = list(reader)
@@ -58,14 +60,14 @@ random.shuffle(data)
 train_data = data[:int(len(data) * 0.9)]
 test_data = data[int(len(data) * 0.9):]
 
-ngram_tagger = joblib.load(model_path.replace("brill", "ngram"))
+ngram_tagger = load_model(model_path.replace("brill", "ngram"))
 
 tagger = nltk.BrillTaggerTrainer(ngram_tagger, nltk.brill.fntbl37())
-tagger = tagger.train(train_data, max_rules=100)
-a = tagger.evaluate(test_data)
-print("Accuracy of Brill tagger : ", a)  # 0.928649695021732
+tagger = tagger.train(train_data)
 
-print("Accuracy: ", a)
+a = tagger.evaluate(test_data)
+
+print("Accuracy of Brill tagger : ", a)  # 0.877122686510208
 db["accuracy"] = a
 db.store()
 joblib.dump(tagger, model_path)

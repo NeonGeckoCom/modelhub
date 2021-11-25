@@ -1,21 +1,11 @@
-from os.path import join, dirname
 import random
 
 import joblib
 from json_database import JsonStorageXDG
 from nltk.corpus import treebank
-from nltk.tag import DefaultTagger
-from nltk.tag import UnigramTagger, BigramTagger, TrigramTagger
-from nltk.tag import DefaultTagger
-from nltk.tag import RegexpTagger
-import joblib
-import nltk
-from nltk import AffixTagger
-from nltk.corpus import treebank
-from nltk.tag import DefaultTagger
-from nltk.tag import RegexpTagger
-from nltk.tag import UnigramTagger, BigramTagger, TrigramTagger
 from nltk.tag import brill, brill_trainer
+
+from neon_modelhub import load_model
 
 db = JsonStorageXDG("nltk_treebank_brill_tagger", subfolder="ModelZoo/nltk")
 MODEL_META = {
@@ -38,8 +28,7 @@ random.shuffle(corpus)
 train_data = corpus[:3000]
 test_data = corpus[3000:]
 
-
-ngram_tagger = joblib.load(model_path.replace("brill", "ngram"))
+ngram_tagger = load_model(model_path.replace("brill", "ngram"))
 
 
 def train_brill_tagger(initial_tagger, train_sents, **kwargs):

@@ -2,11 +2,12 @@ import random
 
 import joblib
 from json_database import JsonStorageXDG
+from nltk.classify import DecisionTreeClassifier
 from nltk.tag.sequential import ClassifierBasedPOSTagger
 
 import biblioteca
 from biblioteca.corpora.external import NILC
-from nltk.classify import DecisionTreeClassifier
+
 db = JsonStorageXDG("nltk_nilc_dtree_tagger", subfolder="ModelZoo/nltk")
 MODEL_META = {
     "corpus": "NILC_taggers",

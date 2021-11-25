@@ -5,6 +5,7 @@ import joblib
 import nltk
 from json_database import JsonStorageXDG
 from nltk.tag import PerceptronTagger
+
 db = JsonStorageXDG("nltk_macmorpho_udep_perceptron_tagger", subfolder="ModelZoo/nltk")
 MODEL_META = {
     "corpus": "macmorpho",

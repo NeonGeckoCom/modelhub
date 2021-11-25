@@ -3,9 +3,9 @@ import random
 import joblib
 import nltk
 from json_database import JsonStorageXDG
-from nltk.corpus import treebank
-from nltk.tag import DefaultTagger
 from nltk.tag import tnt
+
+from neon_modelhub import load_model
 
 db = JsonStorageXDG("nltk_floresta_tnt_tagger", subfolder="ModelZoo/nltk")
 
@@ -34,6 +34,7 @@ def clean_tag(t):
     t = t.lower()
     return t
 
+
 floresta = [[(w, clean_tag(t)) for (w, t) in sent]
             for sent in nltk.corpus.floresta.tagged_sents()]
 random.shuffle(floresta)
@@ -41,9 +42,8 @@ cutoff = int(len(floresta) * 0.9)
 train_data = floresta[:cutoff]
 test_data = floresta[cutoff:]
 
-
 # initializing tagger
-ngram_tagger = joblib.load(model_path.replace("tnt", "ngram"))
+ngram_tagger = load_model(model_path.replace("tnt", "ngram"))
 
 tagger = tnt.TnT(unk=ngram_tagger, Trained=True)
 

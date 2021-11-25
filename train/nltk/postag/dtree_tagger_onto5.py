@@ -1,20 +1,11 @@
-import json
 import os
-import pickle
-import random
-from os.path import join, dirname
-
-import nltk
-from nltk import AffixTagger
-from nltk.tag import UnigramTagger, BigramTagger, TrigramTagger
 import random
 
 import joblib
-import nltk
 from json_database import JsonStorageXDG
-from nltk.corpus import brown
-from nltk.tag.sequential import ClassifierBasedPOSTagger
 from nltk.classify import DecisionTreeClassifier
+from nltk.tag.sequential import ClassifierBasedPOSTagger
+
 db = JsonStorageXDG("nltk_onto5_dtree_tagger", subfolder="ModelZoo/nltk")
 MODEL_META = {
     "corpus": "OntoNotes-5.0-NER-BIO",

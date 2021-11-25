@@ -1,8 +1,9 @@
 from random import shuffle
-from nltk.tag import PerceptronTagger
+
 import joblib
 import nltk
 from json_database import JsonStorageXDG
+from nltk.tag import PerceptronTagger
 
 db = JsonStorageXDG("nltk_floresta_perceptron_tagger", subfolder="ModelZoo/nltk")
 

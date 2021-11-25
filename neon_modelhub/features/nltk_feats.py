@@ -147,8 +147,7 @@ class NltkFeatures:
 
     @staticmethod
     def extract_single_word_features(word):
-
-        feat_dict = {
+        return {
             'suffix1': word[-1:],
             'suffix2': word[-2:],
             'suffix3': word[-3:],
@@ -156,7 +155,6 @@ class NltkFeatures:
             'prefix2': word[:2],
             'prefix3': word[:3]
         }
-        return feat_dict
 
     @staticmethod
     def extract_rte_features(rtepair):

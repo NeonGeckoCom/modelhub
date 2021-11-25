@@ -11,7 +11,7 @@ MODEL_META = {
     "corpus_homepage": "http://www.linguateca.pt/Floresta",
     "lang": "pt",
     "model_id": "nltk_floresta_nb_tagger",
-     "tagset": "VISL (Portuguese)",
+    "tagset": "VISL (Portuguese)",
     "tagset_homepage": "https://visl.sdu.dk/visl/pt/symbolset-floresta.html",
     "algo": "NaiveBayes",
     "required_packages": ["nltk"]
@@ -19,7 +19,6 @@ MODEL_META = {
 db.update(MODEL_META)
 db.store()
 model_path = db.path.replace(".json", ".pkl")
-
 
 nltk.download('floresta')
 
@@ -39,7 +38,6 @@ random.shuffle(floresta)
 cutoff = int(len(floresta) * 0.9)
 train_data = floresta[:cutoff]
 test_data = floresta[cutoff:]
-
 
 tagger = ClassifierBasedPOSTagger(train=train_data)
 

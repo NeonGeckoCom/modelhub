@@ -3,9 +3,9 @@ import random
 import joblib
 import nltk
 from json_database import JsonStorageXDG
-from nltk.corpus import brown
-from nltk.tag.sequential import ClassifierBasedPOSTagger
 from nltk.classify import DecisionTreeClassifier
+from nltk.tag.sequential import ClassifierBasedPOSTagger
+
 db = JsonStorageXDG("nltk_cess_cat_dtree_tagger", subfolder="ModelZoo/nltk")
 MODEL_META = {
     "corpus": "cess_cat",

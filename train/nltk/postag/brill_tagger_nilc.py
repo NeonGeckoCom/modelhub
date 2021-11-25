@@ -6,6 +6,7 @@ from json_database import JsonStorageXDG
 
 import biblioteca
 from biblioteca.corpora.external import NILC
+from neon_modelhub import load_model
 
 db = JsonStorageXDG("nltk_nilc_brill_tagger", subfolder="ModelZoo/nltk")
 MODEL_META = {
@@ -34,7 +35,7 @@ cutoff = int(len(data) * 0.9)
 train_data = data[:cutoff]
 test_data = data[cutoff:]
 
-ngram_tagger = joblib.load(model_path.replace("brill", "ngram"))
+ngram_tagger = load_model(model_path.replace("brill", "ngram"))
 
 tagger = nltk.BrillTaggerTrainer(ngram_tagger, nltk.brill.fntbl37())
 tagger = tagger.train(train_data)

@@ -1,12 +1,12 @@
 import random
 
 import joblib
-import nltk
 from json_database import JsonStorageXDG
+from nltk.tag import PerceptronTagger
 
 import biblioteca
 from biblioteca.corpora.external import NILC
-from nltk.tag import PerceptronTagger
+
 db = JsonStorageXDG("nltk_nilc_perceptron_tagger", subfolder="ModelZoo/nltk")
 MODEL_META = {
     "corpus": "NILC_taggers",
@@ -36,7 +36,6 @@ tagger = PerceptronTagger(load=False)
 tagger.train(train_data)
 
 a = tagger.evaluate(test_data)
-
 
 print("Accuracy of Perceptron tagger : ", a)  # 0.39968751319623325
 db["accuracy"] = a

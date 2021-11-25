@@ -2,9 +2,9 @@ import os
 import random
 
 import joblib
-import nltk
 from json_database import JsonStorageXDG
 from nltk.tag import PerceptronTagger
+
 db = JsonStorageXDG("nltk_onto5_perceptron_tagger", subfolder="ModelZoo/nltk")
 MODEL_META = {
     "corpus": "OntoNotes-5.0-NER-BIO",

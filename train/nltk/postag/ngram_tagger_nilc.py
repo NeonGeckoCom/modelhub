@@ -3,14 +3,8 @@ import random
 import joblib
 import nltk
 from json_database import JsonStorageXDG
-from random import shuffle
-
-import joblib
-import nltk
-from json_database import JsonStorageXDG
 
 import biblioteca
-
 from biblioteca.corpora.external import NILC
 
 db = JsonStorageXDG("nltk_nilc_ngram_tagger", subfolder="ModelZoo/nltk")
@@ -32,7 +26,6 @@ model_path = db.path.replace(".json", ".pkl")
 
 biblioteca.download("NILC_taggers")
 nilc = NILC()
-
 
 data = [s for s in nilc.tagged_sentences()]
 random.shuffle(data)

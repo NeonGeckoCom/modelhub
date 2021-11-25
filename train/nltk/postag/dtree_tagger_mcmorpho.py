@@ -3,9 +3,9 @@ import random
 import joblib
 import nltk
 from json_database import JsonStorageXDG
-from nltk.corpus import brown
-from nltk.tag.sequential import ClassifierBasedPOSTagger
 from nltk.classify import DecisionTreeClassifier
+from nltk.tag.sequential import ClassifierBasedPOSTagger
+
 db = JsonStorageXDG("nltk_macmorpho_dtree_tagger", subfolder="ModelZoo/nltk")
 MODEL_META = {
     "corpus": "macmorpho",
@@ -20,7 +20,6 @@ MODEL_META = {
 db.update(MODEL_META)
 db.store()
 model_path = db.path.replace(".json", ".pkl")
-
 
 nltk.download('mac_morpho')
 
@@ -39,7 +38,6 @@ random.shuffle(dataset)
 cutoff = int(len(dataset) * 0.9)
 train_data = dataset[:cutoff]
 test_data = dataset[cutoff:]
-
 
 tagger = ClassifierBasedPOSTagger(
     train=train_data,

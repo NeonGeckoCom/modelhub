@@ -3,7 +3,6 @@ import random
 import joblib
 import nltk
 from json_database import JsonStorageXDG
-from nltk.corpus import brown
 from nltk.tag.sequential import ClassifierBasedPOSTagger
 
 db = JsonStorageXDG("nltk_cess_esp_nb_tagger", subfolder="ModelZoo/nltk")

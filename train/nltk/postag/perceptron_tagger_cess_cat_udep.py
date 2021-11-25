@@ -1,11 +1,11 @@
 from random import shuffle
 
 import joblib
-import nltk
 from json_database import JsonStorageXDG
+from nltk.tag import PerceptronTagger
 
 import biblioteca
-from nltk.tag import PerceptronTagger
+
 biblioteca.download("cess_cat_udep")
 cess = biblioteca.load_corpus("cess_cat_udep")
 
@@ -29,8 +29,6 @@ shuffle(corpus)
 cutoff = int(len(corpus) * 0.8)
 train_data = corpus[:cutoff]
 test_data = corpus[cutoff:]
-
-ngram_tagger = joblib.load(model_path.replace("perceptron", "ngram"))
 
 tagger = PerceptronTagger(load=False)
 tagger.train(train_data)

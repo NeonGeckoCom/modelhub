@@ -5,6 +5,7 @@ import nltk
 from json_database import JsonStorageXDG
 from nltk.corpus import brown
 from nltk.tag import PerceptronTagger
+
 db = JsonStorageXDG("nltk_brown_perceptron_tagger", subfolder="ModelZoo/nltk")
 
 MODEL_META = {

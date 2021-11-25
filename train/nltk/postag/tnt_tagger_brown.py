@@ -4,8 +4,9 @@ import joblib
 import nltk
 from json_database import JsonStorageXDG
 from nltk.corpus import brown
-from nltk.tag import DefaultTagger
 from nltk.tag import tnt
+
+from neon_modelhub import load_model
 
 db = JsonStorageXDG("nltk_brown_tnt_tagger", subfolder="ModelZoo/nltk")
 MODEL_META = {
@@ -30,9 +31,9 @@ train_data = corpus[:3000]
 test_data = corpus[3000:]
 
 # initializing tagger
-ngram_tagger = joblib.load(model_path.replace("tnt", "ngram"))
+ngram_tagger = load_model(model_path.replace("tnt", "ngram"))
 
-tagger = tnt.TnT(unk=ngram_tagger,  Trained=True)
+tagger = tnt.TnT(unk=ngram_tagger, Trained=True)
 
 # training
 tagger.train(train_data)

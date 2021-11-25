@@ -3,10 +3,10 @@ import random
 import joblib
 from json_database import JsonStorageXDG
 from nltk.corpus import treebank
-from nltk.tag import DefaultTagger, AffixTagger
-from nltk.tag import UnigramTagger, BigramTagger, TrigramTagger
+from nltk.tag import AffixTagger
 from nltk.tag import DefaultTagger
 from nltk.tag import RegexpTagger
+from nltk.tag import UnigramTagger, BigramTagger, TrigramTagger
 
 db = JsonStorageXDG("nltk_treebank_ngram_tagger", subfolder="ModelZoo/nltk")
 MODEL_META = {

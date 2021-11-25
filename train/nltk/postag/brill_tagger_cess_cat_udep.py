@@ -5,6 +5,7 @@ import nltk
 from json_database import JsonStorageXDG
 
 import biblioteca
+from neon_modelhub import load_model
 
 biblioteca.download("cess_cat_udep")
 cess = biblioteca.load_corpus("cess_cat_udep")
@@ -32,7 +33,7 @@ cutoff = int(len(corpus) * 0.8)
 train_data = corpus[:cutoff]
 test_data = corpus[cutoff:]
 
-ngram_tagger = joblib.load(model_path.replace("brill", "ngram"))
+ngram_tagger = load_model(model_path.replace("brill", "ngram"))
 
 tagger = nltk.BrillTaggerTrainer(ngram_tagger, nltk.brill.fntbl37())
 tagger = tagger.train(train_data)

@@ -3,15 +3,16 @@ import random
 import joblib
 import nltk
 from json_database import JsonStorageXDG
-from nltk.tag.sequential import ClassifierBasedPOSTagger
 from nltk.classify import DecisionTreeClassifier
+from nltk.tag.sequential import ClassifierBasedPOSTagger
+
 db = JsonStorageXDG("nltk_floresta_dtree_tagger", subfolder="ModelZoo/nltk")
 MODEL_META = {
     "corpus": "floresta",
     "corpus_homepage": "http://www.linguateca.pt/Floresta",
     "lang": "pt",
     "model_id": "nltk_floresta_dtree_tagger",
-     "tagset": "VISL (Portuguese)",
+    "tagset": "VISL (Portuguese)",
     "tagset_homepage": "https://visl.sdu.dk/visl/pt/symbolset-floresta.html",
     "algo": "DecisionTreeClassifier",
     "required_packages": ["nltk"]
@@ -19,7 +20,6 @@ MODEL_META = {
 db.update(MODEL_META)
 db.store()
 model_path = db.path.replace(".json", ".pkl")
-
 
 nltk.download('floresta')
 
@@ -39,7 +39,6 @@ random.shuffle(floresta)
 cutoff = int(len(floresta) * 0.9)
 train_data = floresta[:cutoff]
 test_data = floresta[cutoff:]
-
 
 tagger = ClassifierBasedPOSTagger(
     train=train_data,

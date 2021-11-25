@@ -3,9 +3,9 @@ import random
 import joblib
 import nltk
 from json_database import JsonStorageXDG
-from nltk.corpus import treebank
-from nltk.tag import DefaultTagger
 from nltk.tag import tnt
+
+from neon_modelhub import load_model
 
 db = JsonStorageXDG("nltk_macmorpho_tnt_tagger", subfolder="ModelZoo/nltk")
 
@@ -42,9 +42,8 @@ cutoff = int(len(dataset) * 0.9)
 train_data = dataset[:cutoff]
 test_data = dataset[cutoff:]
 
-
 # initializing tagger
-ngram_tagger = joblib.load(model_path.replace("tnt", "ngram"))
+ngram_tagger = load_model(model_path.replace("tnt", "ngram"))
 
 tagger = tnt.TnT(unk=ngram_tagger, Trained=True)
 

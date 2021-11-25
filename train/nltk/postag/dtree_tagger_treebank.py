@@ -3,9 +3,9 @@ import random
 import joblib
 import nltk
 from json_database import JsonStorageXDG
+from nltk.classify import DecisionTreeClassifier
 from nltk.corpus import treebank
 from nltk.tag.sequential import ClassifierBasedPOSTagger
-from nltk.classify import DecisionTreeClassifier
 
 db = JsonStorageXDG("nltk_treebank_dtree_tagger", subfolder="ModelZoo/nltk")
 MODEL_META = {

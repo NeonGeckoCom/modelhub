@@ -4,6 +4,7 @@ import joblib
 import nltk
 from json_database import JsonStorageXDG
 from nltk.tag import PerceptronTagger
+
 db = JsonStorageXDG("nltk_cess_esp_perceptron_tagger", subfolder="ModelZoo/nltk")
 MODEL_META = {
     "corpus": "cess_esp",
@@ -28,8 +29,6 @@ shuffle(corpus)
 cutoff = int(len(corpus) * 0.9)
 train_data = corpus[:cutoff]
 test_data = corpus[cutoff:]
-
-ngram_tagger = joblib.load(model_path.replace("perceptron", "ngram"))
 
 tagger = PerceptronTagger(load=False)
 tagger.train(train_data)

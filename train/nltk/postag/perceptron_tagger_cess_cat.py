@@ -4,6 +4,7 @@ import joblib
 import nltk
 from json_database import JsonStorageXDG
 from nltk.tag import PerceptronTagger
+
 db = JsonStorageXDG("nltk_cess_cat_perceptron_tagger", subfolder="ModelZoo/nltk")
 MODEL_META = {
     "corpus": "cess_cat",
@@ -34,7 +35,7 @@ tagger.train(train_data)
 
 a = tagger.evaluate(test_data)
 
-print("Accuracy of Brill tagger : ", a)  # 0.9384222700805616
+print("Accuracy of tagger : ", a)  # 0.9384222700805616
 db["accuracy"] = a
 
 joblib.dump(tagger, model_path)

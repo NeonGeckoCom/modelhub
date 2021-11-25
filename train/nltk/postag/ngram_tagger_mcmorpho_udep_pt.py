@@ -1,11 +1,3 @@
-import json
-from os.path import dirname
-from os.path import join
-from random import shuffle
-from string import punctuation
-
-import joblib
-import nltk
 from random import shuffle
 from string import punctuation
 
@@ -137,5 +129,3 @@ print("Accuracy of ngram tagger : ", a)  # 0.946797034195791
 db["accuracy"] = a
 db.store()
 joblib.dump(tagger, model_path)
-
-
