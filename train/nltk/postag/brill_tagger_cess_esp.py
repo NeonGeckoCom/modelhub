@@ -4,15 +4,15 @@ import joblib
 import nltk
 from json_database import JsonStorageXDG
 
-db = JsonStorageXDG("nltk_cess_esp_ngram_tagger", subfolder="ModelZoo/nltk")
+db = JsonStorageXDG("nltk_cess_esp_brill_tagger", subfolder="ModelZoo/nltk")
 MODEL_META = {
     "corpus": "cess_esp",
     "corpus_homepage": "https://web.archive.org/web/20121023154634/http://clic.ub.edu/cessece/",
     "lang": "es",
-    "model_id": "nltk_cess_esp_ngram_tagger",
-    "algo": "TrigramTagger",
+    "model_id": "nltk_cess_esp_brill_tagger",
     "tagset": "EAGLES",
     "tagset_homepage": "http://www.ilc.cnr.it/EAGLES96/annotate/annotate.html",
+    "algo": "nltk.brill.fntbl37",
     "backoff_taggers": ["AffixTagger", "UnigramTagger",
                         "BigramTagger", "TrigramTagger"],
     "required_packages": ["nltk"]
@@ -20,34 +20,25 @@ MODEL_META = {
 db.update(MODEL_META)
 db.store()
 model_path = db.path.replace(".json", ".pkl")
-print(model_path)
+
 # EAGLES
 # http://www.ilc.cnr.it/EAGLES96/annotate/annotate.html
 nltk.download('cess_esp')
 
-corpus = [sent for sent in nltk.corpus.cess_cat.tagged_sents()]
+corpus = [sent for sent in nltk.corpus.cess_esp.tagged_sents()]
 shuffle(corpus)
 cutoff = int(len(corpus) * 0.9)
 train_data = corpus[:cutoff]
 test_data = corpus[cutoff:]
 
-affix_tagger = nltk.AffixTagger(
-    train_data
-)
-unitagger = nltk.UnigramTagger(
-    train_data, backoff=affix_tagger
-)
-bitagger = nltk.BigramTagger(
-    train_data, backoff=unitagger
-)
-tagger = nltk.TrigramTagger(
-    train_data, backoff=bitagger
-)
+ngram_tagger = joblib.load(model_path.replace("brill", "ngram"))
+
+tagger = nltk.BrillTaggerTrainer(ngram_tagger, nltk.brill.fntbl37())
+tagger = tagger.train(train_data)
 
 a = tagger.evaluate(test_data)
 
-print("Accuracy of ngram tagger : ", a)  # 0.9350522453537529
+print("Accuracy of Brill tagger : ", a)  # 0.9384222700805616
 db["accuracy"] = a
-db.store()
 
 joblib.dump(tagger, model_path)
