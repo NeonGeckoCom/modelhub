@@ -1,0 +1,12 @@
+{
+    "corpus": "brown",
+    "lang": "en",
+    "corpus_homepage": "http://www.hit.uib.no/icame/brown/bcm.html",
+    "model_id": "nltk_brown_clf_tagger",
+    "tagset": "brown",
+    "algo": "ClassifierBasedPOSTagger",
+    "required_packages": [
+        "nltk"
+    ],
+    "accuracy": 0.8824449287339768
+}

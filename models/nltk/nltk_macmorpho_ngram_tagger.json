@@ -1,0 +1,21 @@
+{
+    "corpus": "macmorpho",
+    "model_id": "nltk_macmorpho_ngram_tagger",
+    "corpus_homepage": "http://www.nilc.icmc.usp.br/macmorpho/",
+    "tagset": "",
+    "tagset_homepage": "http://www.nilc.icmc.usp.br/macmorpho/macmorpho-manual.pdf",
+    "lang": "pt",
+    "algo": "TrigramTagger",
+    "backoff_taggers": [
+        "DefaultTagger",
+        "AffixTagger",
+        "UnigramTagger",
+        "RegexpTagger",
+        "BigramTagger",
+        "TrigramTagger"
+    ],
+    "required_packages": [
+        "nltk"
+    ],
+    "accuracy": 0.9282144441746963
+}

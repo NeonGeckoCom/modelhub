@@ -14,5 +14,6 @@
     "required_packages": [
         "nltk"
     ],
-    "accuracy": 0.9348932436384908
+    "accuracy": 0.9283011251829053,
+    "algo": "TrigramTagger"
 }
