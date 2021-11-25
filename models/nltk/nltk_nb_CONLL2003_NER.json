@@ -1,0 +1,19 @@
+{
+    "corpus": "CONLL2003",
+    "lang": "en",
+    "corpus_homepage": "https://github.com/davidsbatista/NER-datasets/tree/master/CONLL2003",
+    "model_id": "nltk_nb_CONLL2003_NER",
+    "tagset": "conll_iob",
+    "algo": "NaiveBayes",
+    "entitíes": [
+        "ORG",
+        "LOC",
+        "MISC",
+        "PER"
+    ],
+    "required_packages": [
+        "nltk",
+        "neon_modelhub"
+    ],
+    "accuracy": 0.9132773325333219
+}

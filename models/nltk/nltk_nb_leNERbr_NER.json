@@ -1,0 +1,21 @@
+{
+    "corpus": "leNER-Br",
+    "lang": "pt-br",
+    "corpus_homepage": "https://cic.unb.br/~teodecampos/LeNER-Br/",
+    "model_id": "nltk_nb_leNERbr_NER",
+    "tagset": "conll_iob",
+    "algo": "NaiveBayes",
+    "entitíes": [
+        "PESSOA",
+        "JURISPRUDENCIA",
+        "LEGISLACAO",
+        "ORGANIZACAO",
+        "LOCAL",
+        "TEMPO"
+    ],
+    "required_packages": [
+        "nltk",
+        "JarbasModelZoo"
+    ],
+    "accuracy": 0.9211907830624627
+}

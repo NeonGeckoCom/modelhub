@@ -1,0 +1,7 @@
+{
+    "model_id": "nltk_locations_gazetteer_ner",
+    "algo": "gazetteer",
+    "required_packages": [
+        "nltk"
+    ]
+}

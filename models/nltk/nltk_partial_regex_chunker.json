@@ -1,0 +1,7 @@
+{
+    "model_id": "nltk_partial_regex_chunker",
+    "algo": "regex",
+    "required_packages": [
+        "nltk"
+    ]
+}

@@ -1,0 +1,19 @@
+{
+    "corpus": "HAREM",
+    "lang": "pt",
+    "model_id": "nltk_nb_HAREM_NER",
+    "tagset": "conll_iob",
+    "algo": "NaiveBayes",
+    "entitíes": [
+        "ORGANIZACAO",
+        "VALOR",
+        "TEMPO",
+        "LOCAL",
+        "PESSOA"
+    ],
+    "required_packages": [
+        "nltk",
+        "neon_modelhub"
+    ],
+    "accuracy": 0.8908148787860095
+}

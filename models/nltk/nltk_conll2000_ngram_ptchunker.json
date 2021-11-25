@@ -1,0 +1,16 @@
+{
+    "corpus": "CONLL2000",
+    "model_id": "nltk_conll2000_ngram_ptchunker",
+    "tagset": "",
+    "lang": "en",
+    "algo": "TrigramTagger",
+    "backoff_taggers": [
+        "UnigramTagger",
+        "BigramTagger",
+        "TrigramTagger"
+    ],
+    "required_packages": [
+        "nltk",
+        "neon_modelhub"
+    ]
+}

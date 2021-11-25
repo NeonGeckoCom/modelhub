@@ -1,0 +1,19 @@
+{
+    "corpus": "Paramopama",
+    "lang": "pt",
+    "corpus_homepage": "https://github.com/davidsbatista/NER-datasets/blob/master/Portuguese/Paramopama",
+    "model_id": "nltk_nb_paramopama_NER",
+    "tagset": "conll_iob",
+    "algo": "NaiveBayes",
+    "entitíes": [
+        "LOCAL",
+        "ORGANIZACAO",
+        "PESSOA",
+        "TEMPO"
+    ],
+    "required_packages": [
+        "nltk",
+        "neon_modelhub"
+    ],
+    "accuracy": 0.9162697500246362
+}
