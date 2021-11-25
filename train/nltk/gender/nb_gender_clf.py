@@ -14,8 +14,8 @@ MODEL_META = {
     "lang": "en",
     "corpus_homepage": "",
     "model_id": "nltk_nb_gender_clf",
-    "algo": "ClassifierBasedTagger",
-    "required_packages": ["nltk", "JarbasModelZoo"]
+    "algo": "NaiveBayesClassifier",
+    "required_packages": ["nltk", "neon_modelhub"]
 }
 db.update(MODEL_META)
 db.store()

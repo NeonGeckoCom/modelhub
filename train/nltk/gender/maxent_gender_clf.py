@@ -16,7 +16,7 @@ MODEL_META = {
     "corpus_homepage": "",
     "model_id": "nltk_maxent_gender_clf",
     "algo": "MaxentClassifier",
-    "required_packages": ["nltk", "JarbasModelZoo"]
+    "required_packages": ["nltk", "neon_modelhub"]
 }
 db.update(MODEL_META)
 db.store()

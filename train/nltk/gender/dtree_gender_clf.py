@@ -15,8 +15,8 @@ MODEL_META = {
     "lang": "en",
     "corpus_homepage": "",
     "model_id": "nltk_dtree_gender_clf",
-    "algo": "ClassifierBasedTagger",
-    "required_packages": ["nltk", "JarbasModelZoo"]
+    "algo": "DecisionTreeClassifier",
+    "required_packages": ["nltk", "neon_modelhub"]
 }
 db.update(MODEL_META)
 db.store()
