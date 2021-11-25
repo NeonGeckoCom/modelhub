@@ -1,0 +1,12 @@
+{
+    "corpus": "nltk names",
+    "lang": "en",
+    "corpus_homepage": "",
+    "model_id": "nltk_gender_nb_clf",
+    "algo": "NaiveBayesClassifier",
+    "required_packages": [
+        "nltk",
+        "neon_modelhub"
+    ],
+    "accuracy": 0.8325991189427313
+}

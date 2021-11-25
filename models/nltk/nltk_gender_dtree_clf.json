@@ -1,0 +1,12 @@
+{
+    "corpus": "nltk names",
+    "lang": "en",
+    "corpus_homepage": "",
+    "model_id": "nltk_gender_dtree_clf",
+    "algo": "DecisionTreeClassifier",
+    "required_packages": [
+        "nltk",
+        "neon_modelhub"
+    ],
+    "accuracy": 0.7230962869729389
+}
