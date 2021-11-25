@@ -11,6 +11,7 @@ MODELS_DIR = join(xdg.BaseDirectory.xdg_cache_home, "ModelZoo")
 
 
 def load_model(model_id):
+    # model_id is {framework}_{dataset}_{algorithm}_{task}
     subfolder = model_id.split("_")[0]
     models_dir = join(MODELS_DIR, subfolder)
     model_path = join(models_dir, model_id + ".pkl")
@@ -20,6 +21,7 @@ def load_model(model_id):
 
 
 def download_model(model_id):
+    # model_id is {framework}_{dataset}_{algorithm}_{task}
     url = MANIFEST[model_id]
     subfolder = model_id.split("_")[0]
     models_dir = join(MODELS_DIR, subfolder)

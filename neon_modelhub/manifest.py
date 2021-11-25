@@ -14,6 +14,7 @@ def populate_manifest():
     except:
         # model urls, used only if manifest does not yet exist
         # manually maintained list !
+        # model_id is {framework}_{dataset}_{algorithm}_{task}
         DEFAULT_MANIFEST = {
             'nltk_brown_brill_tagger': 'https://github.com/NeonJarbas/modelhub/raw/models/models/nltk/nltk_brown_brill_tagger.pkl',
             'nltk_brown_dtree_tagger': 'https://github.com/NeonJarbas/modelhub/raw/models/models/nltk/nltk_brown_dtree_tagger.pkl',
@@ -23,6 +24,7 @@ def populate_manifest():
             'nltk_brown_tnt_tagger': 'https://github.com/NeonJarbas/modelhub/raw/models/models/nltk/nltk_brown_tnt_tagger.pkl',
             'nltk_cess_cat_brill_tagger': 'https://github.com/NeonJarbas/modelhub/raw/models/models/nltk/nltk_cess_cat_brill_tagger.pkl',
             'nltk_cess_cat_ngram_tagger': 'https://github.com/NeonJarbas/modelhub/raw/models/models/nltk/nltk_cess_cat_ngram_tagger.pkl',
+            'nltk_cess_cat_perceptron_tagger': 'https://github.com/NeonJarbas/modelhub/raw/models/models/nltk/nltk_cess_cat_perceptron_tagger.pkl',
             'nltk_cess_cat_udep_brill_tagger': 'https://github.com/NeonJarbas/modelhub/raw/models/models/nltk/nltk_cess_cat_udep_brill_tagger.pkl',
             'nltk_cess_cat_udep_ngram_tagger': 'https://github.com/NeonJarbas/modelhub/raw/models/models/nltk/nltk_cess_cat_udep_ngram_tagger.pkl',
             'nltk_cess_cat_udep_perceptron_tagger': 'https://github.com/NeonJarbas/modelhub/raw/models/models/nltk/nltk_cess_cat_udep_perceptron_tagger.pkl',
@@ -36,6 +38,9 @@ def populate_manifest():
             'nltk_floresta_ngram_tagger': 'https://github.com/NeonJarbas/modelhub/raw/models/models/nltk/nltk_floresta_ngram_tagger.pkl',
             'nltk_floresta_perceptron_tagger': 'https://github.com/NeonJarbas/modelhub/raw/models/models/nltk/nltk_floresta_perceptron_tagger.pkl',
             'nltk_floresta_tnt_tagger': 'https://github.com/NeonJarbas/modelhub/raw/models/models/nltk/nltk_floresta_tnt_tagger.pkl',
+            'nltk_gender_dtree_clf': 'https://github.com/NeonJarbas/modelhub/raw/models/models/nltk/nltk_gender_dtree_clf.pkl',
+            'nltk_gender_maxent_clf': 'https://github.com/NeonJarbas/modelhub/raw/models/models/nltk/nltk_gender_maxent_clf.pkl',
+            'nltk_gender_nb_clf': 'https://github.com/NeonJarbas/modelhub/raw/models/models/nltk/nltk_gender_nb_clf.pkl',
             'nltk_macmorpho_brill_tagger': 'https://github.com/NeonJarbas/modelhub/raw/models/models/nltk/nltk_macmorpho_brill_tagger.pkl',
             'nltk_macmorpho_ngram_tagger': 'https://github.com/NeonJarbas/modelhub/raw/models/models/nltk/nltk_macmorpho_ngram_tagger.pkl',
             'nltk_macmorpho_perceptron_tagger': 'https://github.com/NeonJarbas/modelhub/raw/models/models/nltk/nltk_macmorpho_perceptron_tagger.pkl',
@@ -46,10 +51,10 @@ def populate_manifest():
             'nltk_nilc_dtree_tagger': 'https://github.com/NeonJarbas/modelhub/raw/models/models/nltk/nltk_nilc_dtree_tagger.pkl',
             'nltk_nilc_ngram_tagger': 'https://github.com/NeonJarbas/modelhub/raw/models/models/nltk/nltk_nilc_ngram_tagger.pkl',
             'nltk_nilc_perceptron_tagger': 'https://github.com/NeonJarbas/modelhub/raw/models/models/nltk/nltk_nilc_perceptron_tagger.pkl',
+            'nltk_onto5_brill_tagger': 'https://github.com/NeonJarbas/modelhub/raw/models/models/nltk/nltk_onto5_brill_tagger.pkl',
             'nltk_onto5_ngram_tagger': 'https://github.com/NeonJarbas/modelhub/raw/models/models/nltk/nltk_onto5_ngram_tagger.pkl',
             'nltk_onto5_perceptron_tagger': 'https://github.com/NeonJarbas/modelhub/raw/models/models/nltk/nltk_onto5_perceptron_tagger.pkl',
             'nltk_treebank_brill_tagger': 'https://github.com/NeonJarbas/modelhub/raw/models/models/nltk/nltk_treebank_brill_tagger.pkl',
-            'nltk_treebank_hmm_tagger': 'https://github.com/NeonJarbas/modelhub/raw/models/models/nltk/nltk_treebank_hmm_tagger.pkl',
             'nltk_treebank_maxent_tagger': 'https://github.com/NeonJarbas/modelhub/raw/models/models/nltk/nltk_treebank_maxent_tagger.pkl',
             'nltk_treebank_ngram_tagger': 'https://github.com/NeonJarbas/modelhub/raw/models/models/nltk/nltk_treebank_ngram_tagger.pkl',
             'nltk_treebank_perceptron_tagger': 'https://github.com/NeonJarbas/modelhub/raw/models/models/nltk/nltk_treebank_perceptron_tagger.pkl',
