@@ -1,0 +1,14 @@
+{
+    "corpus": "treebank",
+    "lang": "en",
+    "model_id": "nltk_treebank_tnt_tagger",
+    "tagset": "Penn Treebank",
+    "algo": "TnT",
+    "backoff_taggers": [
+        "DefaultTagger"
+    ],
+    "required_packages": [
+        "nltk"
+    ],
+    "accuracy": 0.9668496621621622
+}

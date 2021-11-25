@@ -1,0 +1,12 @@
+{
+    "corpus": "nltk names",
+    "lang": "en",
+    "corpus_homepage": "",
+    "model_id": "nltk_nb_gender_clf",
+    "algo": "ClassifierBasedTagger",
+    "required_packages": [
+        "nltk",
+        "JarbasModelZoo"
+    ],
+    "accuracy": 0.8244178728760226
+}

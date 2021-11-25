@@ -1,0 +1,12 @@
+{
+    "corpus": "treebank",
+    "corpus_homepage": "http://www.hit.uib.no/icame/brown/bcm.html",
+    "model_id": "nltk_treebank_perceptron_tagger",
+    "tagset": "Penn Treebank",
+    "lang": "en",
+    "algo": "Perceptron",
+    "required_packages": [
+        "nltk"
+    ],
+    "accuracy": 0.9571876087713191
+}

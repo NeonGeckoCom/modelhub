@@ -1,0 +1,12 @@
+{
+    "corpus": "brown",
+    "lang": "en",
+    "corpus_homepage": "http://www.hit.uib.no/icame/brown/bcm.html",
+    "model_id": "nltk_brown_dtree_tagger",
+    "tagset": "brown",
+    "algo": "DecisionTreeClassifier",
+    "required_packages": [
+        "nltk"
+    ],
+    "accuracy": 0.4264809882648099
+}

@@ -1,0 +1,12 @@
+{
+    "corpus": "cess_cat_udep",
+    "corpus_homepage": "https://github.com/OpenJarbas/biblioteca",
+    "lang": "ca",
+    "model_id": "nltk_cess_cat_udep_perceptron_tagger",
+    "tagset": "Universal Dependencies",
+    "algo": "Perceptron",
+    "required_packages": [
+        "nltk"
+    ],
+    "train/test": "80/20"
+}

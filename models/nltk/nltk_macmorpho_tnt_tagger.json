@@ -1,0 +1,15 @@
+{
+    "corpus": "macmorpho",
+    "corpus_homepage": "http://www.linguateca.pt/Floresta",
+    "lang": "pt",
+    "model_id": "nltk_macmorpho_tnt_tagger",
+    "tagset": "",
+    "tagset_homepage": "http://www.nilc.icmc.usp.br/macmorpho/macmorpho-manual.pdf",
+    "algo": "TnT",
+    "backoff_taggers": [
+        "DefaultTagger"
+    ],
+    "required_packages": [
+        "nltk"
+    ]
+}

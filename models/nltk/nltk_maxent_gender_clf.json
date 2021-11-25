@@ -1,0 +1,12 @@
+{
+    "corpus": "nltk names",
+    "lang": "en",
+    "corpus_homepage": "",
+    "model_id": "nltk_maxent_gender_clf",
+    "algo": "MaxentClassifier",
+    "required_packages": [
+        "nltk",
+        "JarbasModelZoo"
+    ],
+    "accuracy": 0.8162366268093141
+}

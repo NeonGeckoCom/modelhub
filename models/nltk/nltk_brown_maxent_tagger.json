@@ -8,5 +8,6 @@
     "classifier": "MaxentClassifier",
     "required_packages": [
         "nltk"
-    ]
+    ],
+    "accuracy": 0.0
 }

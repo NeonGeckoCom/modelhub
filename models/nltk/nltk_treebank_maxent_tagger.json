@@ -1,0 +1,11 @@
+{
+    "corpus": "treebank",
+    "lang": "en",
+    "model_id": "nltk_treebank_maxent_tagger",
+    "tagset": "Penn Treebank",
+    "algo": "MaxentClassifier",
+    "required_packages": [
+        "nltk"
+    ],
+    "accuracy": 0.9252866322288018
+}
