@@ -14,7 +14,7 @@ MODEL_META = {
     "tagset_homepage": "http://www.nilc.icmc.usp.br/macmorpho/macmorpho-manual.pdf",
     "lang": "pt",
     "model_id": "nltk_macmorpho_clf_tagger",
-    "algo": "ClassifierBasedPOSTagger",
+    "algo": "NaiveBayes",
     "required_packages": ["nltk"]
 }
 db.update(MODEL_META)

@@ -15,7 +15,7 @@ MODEL_META = {
     "tagset": "NILC",
     "tagset_homepage": "http://www.nilc.icmc.usp.br/nilc/download/tagsetcompleto.doc",
     "lang": "pt-br",
-    "algo": "ClassifierBasedPOSTagger",
+    "algo": "NaiveBayes",
     "backoff_taggers": ["AffixTagger", "UnigramTagger", "BigramTagger",
                         "TrigramTagger"],
     "required_packages": ["nltk"]

@@ -13,7 +13,7 @@ MODEL_META = {
     "model_id": "nltk_floresta_clf_tagger",
      "tagset": "VISL (Portuguese)",
     "tagset_homepage": "https://visl.sdu.dk/visl/pt/symbolset-floresta.html",
-    "algo": "ClassifierBasedPOSTagger",
+    "algo": "NaiveBayes",
     "required_packages": ["nltk"]
 }
 db.update(MODEL_META)

@@ -13,7 +13,7 @@ MODEL_META = {
     "corpus_homepage": "http://www.hit.uib.no/icame/brown/bcm.html",
     "model_id": "nltk_brown_clf_tagger",
     "tagset": "brown",
-    "algo": "ClassifierBasedPOSTagger",
+    "algo": "NaiveBayes",
     "required_packages": ["nltk"]
 }
 db.update(MODEL_META)

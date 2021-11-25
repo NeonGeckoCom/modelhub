@@ -22,7 +22,7 @@ MODEL_META = {
     "corpus_homepage": "https://github.com/yuchenlin/OntoNotes-5.0-NER-BIO",
     "model_id": "nltk_onto5_clf_tagger",
     "tagset": "Penn Treebank",
-    "algo": "ClassifierBasedPOSTagger",
+    "algo": "NaiveBayes",
     "required_packages": ["nltk"]
 }
 db.update(MODEL_META)

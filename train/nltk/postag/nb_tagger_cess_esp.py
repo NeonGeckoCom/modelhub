@@ -14,7 +14,7 @@ MODEL_META = {
     "model_id": "nltk_cess_cat_clf_tagger",
     "tagset": "EAGLES",
     "tagset_homepage": "http://www.ilc.cnr.it/EAGLES96/annotate/annotate.html",
-    "algo": "ClassifierBasedPOSTagger",
+    "algo": "NaiveBayes",
     "required_packages": ["nltk"]
 }
 db.update(MODEL_META)
