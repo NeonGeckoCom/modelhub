@@ -9,12 +9,12 @@ from nltk.corpus import names
 
 from neon_modelhub.features.nltk_feats import NltkFeatures
 
-db = JsonStorageXDG("nltk_maxent_gender_clf", subfolder="ModelZoo/nltk")
+db = JsonStorageXDG("nltk_gender_maxent_clf", subfolder="ModelZoo/nltk")
 MODEL_META = {
     "corpus": "nltk names",
     "lang": "en",
     "corpus_homepage": "",
-    "model_id": "nltk_maxent_gender_clf",
+    "model_id": "nltk_gender_maxent_clf",
     "algo": "MaxentClassifier",
     "required_packages": ["nltk", "neon_modelhub"]
 }

@@ -9,12 +9,12 @@ from nltk.corpus import names
 
 from neon_modelhub.features.nltk_feats import NltkFeatures
 
-db = JsonStorageXDG("nltk_dtree_gender_clf", subfolder="ModelZoo/nltk")
+db = JsonStorageXDG("nltk_gender_dtree_clf", subfolder="ModelZoo/nltk")
 MODEL_META = {
     "corpus": "nltk names",
     "lang": "en",
     "corpus_homepage": "",
-    "model_id": "nltk_dtree_gender_clf",
+    "model_id": "nltk_gender_dtree_clf",
     "algo": "DecisionTreeClassifier",
     "required_packages": ["nltk", "neon_modelhub"]
 }
