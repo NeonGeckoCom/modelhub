@@ -1,0 +1,18 @@
+{
+    "corpus": "OntoNotes-5.0-NER-BIO",
+    "lang": "en",
+    "corpus_homepage": "https://github.com/yuchenlin/OntoNotes-5.0-NER-BIO",
+    "model_id": "nltk_onto5_ngram_tagger",
+    "tagset": "Penn Treebank",
+    "algo": "TrigramTagger",
+    "backoff_taggers": [
+        "AffixTagger",
+        "UnigramTagger",
+        "BigramTagger",
+        "TrigramTagger"
+    ],
+    "required_packages": [
+        "nltk"
+    ],
+    "accuracy": 0.9129108023960818
+}

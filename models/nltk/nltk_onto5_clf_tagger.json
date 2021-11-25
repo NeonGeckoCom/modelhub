@@ -1,0 +1,12 @@
+{
+    "corpus": "OntoNotes-5.0-NER-BIO",
+    "lang": "en",
+    "corpus_homepage": "https://github.com/yuchenlin/OntoNotes-5.0-NER-BIO",
+    "model_id": "nltk_onto5_clf_tagger",
+    "tagset": "Penn Treebank",
+    "algo": "ClassifierBasedPOSTagger",
+    "required_packages": [
+        "nltk"
+    ],
+    "accuracy": 0.8983927323549965
+}
