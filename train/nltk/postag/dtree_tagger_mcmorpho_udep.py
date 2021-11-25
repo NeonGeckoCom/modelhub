@@ -6,15 +6,15 @@ import nltk
 from json_database import JsonStorageXDG
 from nltk.tag.sequential import ClassifierBasedPOSTagger
 from nltk.classify import DecisionTreeClassifier
-db = JsonStorageXDG("nltk_macmorpho_udep_clf_tagger", subfolder="ModelZoo/nltk")
+db = JsonStorageXDG("nltk_macmorpho_udep_dtree_tagger", subfolder="ModelZoo/nltk")
 MODEL_META = {
     "corpus": "macmorpho",
     "corpus_homepage": "http://www.nilc.icmc.usp.br/macmorpho/",
     "tagset": "",
     "tagset_homepage": "http://www.nilc.icmc.usp.br/macmorpho/macmorpho-manual.pdf",
     "lang": "pt",
-    "model_id": "nltk_macmorpho_udep_clf_tagger",
-    "algo": "NaiveBayes",
+    "model_id": "nltk_macmorpho_udep_dtree_tagger",
+    "algo": "DecisionTreeClassifier",
     "required_packages": ["nltk"]
 }
 db.update(MODEL_META)

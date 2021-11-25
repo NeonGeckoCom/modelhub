@@ -7,17 +7,15 @@ from nltk.tag.sequential import ClassifierBasedPOSTagger
 import biblioteca
 from biblioteca.corpora.external import NILC
 from nltk.classify import DecisionTreeClassifier
-db = JsonStorageXDG("nltk_nilc_clf_tagger", subfolder="ModelZoo/nltk")
+db = JsonStorageXDG("nltk_nilc_dtree_tagger", subfolder="ModelZoo/nltk")
 MODEL_META = {
     "corpus": "NILC_taggers",
     "corpus_homepage": "http://www.nilc.icmc.usp.br/nilc/tools/nilctaggers.html",
-    "model_id": "nltk_nilc_clf_tagger",
+    "model_id": "nltk_nilc_dtree_tagger",
     "tagset": "NILC",
     "tagset_homepage": "http://www.nilc.icmc.usp.br/nilc/download/tagsetcompleto.doc",
     "lang": "pt-br",
-    "algo": "NaiveBayes",
-    "backoff_taggers": ["AffixTagger", "UnigramTagger", "BigramTagger",
-                        "TrigramTagger"],
+    "algo": "DecisionTreeClassifier",
     "required_packages": ["nltk"]
 }
 db.update(MODEL_META)

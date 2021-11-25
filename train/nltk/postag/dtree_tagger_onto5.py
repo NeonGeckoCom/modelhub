@@ -15,14 +15,14 @@ from json_database import JsonStorageXDG
 from nltk.corpus import brown
 from nltk.tag.sequential import ClassifierBasedPOSTagger
 from nltk.classify import DecisionTreeClassifier
-db = JsonStorageXDG("nltk_onto5_clf_tagger", subfolder="ModelZoo/nltk")
+db = JsonStorageXDG("nltk_onto5_dtree_tagger", subfolder="ModelZoo/nltk")
 MODEL_META = {
     "corpus": "OntoNotes-5.0-NER-BIO",
     "lang": "en",
     "corpus_homepage": "https://github.com/yuchenlin/OntoNotes-5.0-NER-BIO",
-    "model_id": "nltk_onto5_clf_tagger",
+    "model_id": "nltk_onto5_dtree_tagger",
     "tagset": "Penn Treebank",
-    "algo": "NaiveBayes",
+    "algo": "DecisionTreeClassifier",
     "required_packages": ["nltk"]
 }
 db.update(MODEL_META)

@@ -6,14 +6,14 @@ from json_database import JsonStorageXDG
 from nltk.corpus import brown
 from nltk.tag.sequential import ClassifierBasedPOSTagger
 from nltk.classify import DecisionTreeClassifier
-db = JsonStorageXDG("nltk_brown_clf_tagger", subfolder="ModelZoo/nltk")
+db = JsonStorageXDG("nltk_brown_dtree_tagger", subfolder="ModelZoo/nltk")
 MODEL_META = {
     "corpus": "brown",
     "lang": "en",
     "corpus_homepage": "http://www.hit.uib.no/icame/brown/bcm.html",
-    "model_id": "nltk_brown_clf_tagger",
+    "model_id": "nltk_brown_dtree_tagger",
     "tagset": "brown",
-    "algo": "NaiveBayes",
+    "algo": "DecisionTreeClassifier",
     "required_packages": ["nltk"]
 }
 db.update(MODEL_META)

@@ -36,7 +36,7 @@ tagger = PerceptronTagger(load=False)
 tagger.train(train_data)
 a = tagger.evaluate(test_data)
 
-print("Accuracy of Brill tagger : ", a)  # 0.9745613865781397
+print("Accuracy of tagger : ", a)  # 0.9745613865781397
 MODEL_META["accuracy"] = a
 db.store()
 

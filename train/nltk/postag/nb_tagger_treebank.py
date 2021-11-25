@@ -6,11 +6,11 @@ from json_database import JsonStorageXDG
 from nltk.corpus import treebank
 from nltk.tag.sequential import ClassifierBasedPOSTagger
 
-db = JsonStorageXDG("nltk_treebank_clf_tagger", subfolder="ModelZoo/nltk")
+db = JsonStorageXDG("nltk_treebank_nb_tagger", subfolder="ModelZoo/nltk")
 MODEL_META = {
     "corpus": "treebank",
     "lang": "en",
-    "model_id": "nltk_treebank_clf_tagger",
+    "model_id": "nltk_treebank_nb_tagger",
     "tagset": "Penn Treebank",
     "algo": "NaiveBayes",
     "required_packages": ["nltk"]

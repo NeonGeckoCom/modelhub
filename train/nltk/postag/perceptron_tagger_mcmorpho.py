@@ -42,6 +42,8 @@ tagger = PerceptronTagger(load=False)
 tagger.train(train_data)
 
 a = tagger.evaluate(test_data)
+
+print("Accuracy of Perceptron tagger : ", a)  # 0.39968751319623325
 db["accuracy"] = a
 db.store()
 joblib.dump(tagger, model_path)

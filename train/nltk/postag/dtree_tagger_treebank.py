@@ -7,13 +7,13 @@ from nltk.corpus import treebank
 from nltk.tag.sequential import ClassifierBasedPOSTagger
 from nltk.classify import DecisionTreeClassifier
 
-db = JsonStorageXDG("nltk_treebank_clf_tagger", subfolder="ModelZoo/nltk")
+db = JsonStorageXDG("nltk_treebank_dtree_tagger", subfolder="ModelZoo/nltk")
 MODEL_META = {
     "corpus": "treebank",
     "lang": "en",
-    "model_id": "nltk_treebank_clf_tagger",
+    "model_id": "nltk_treebank_dtree_tagger",
     "tagset": "Penn Treebank",
-    "algo": "NaiveBayes",
+    "algo": "DecisionTreeClassifier",
     "required_packages": ["nltk"]
 }
 db.update(MODEL_META)

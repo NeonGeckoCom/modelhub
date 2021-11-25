@@ -3,24 +3,26 @@ import random
 import joblib
 import nltk
 from json_database import JsonStorageXDG
-from nltk.corpus import brown
-from nltk.tag.sequential import ClassifierBasedPOSTagger
-from nltk.classify import DecisionTreeClassifier
-db = JsonStorageXDG("nltk_macmorpho_dtree_tagger", subfolder="ModelZoo/nltk")
+from nltk.corpus import treebank
+from nltk.tag import DefaultTagger
+from nltk.tag import tnt
+
+db = JsonStorageXDG("nltk_macmorpho_tnt_tagger", subfolder="ModelZoo/nltk")
+
 MODEL_META = {
     "corpus": "macmorpho",
-    "corpus_homepage": "http://www.nilc.icmc.usp.br/macmorpho/",
+    "corpus_homepage": "http://www.linguateca.pt/Floresta",
+    "lang": "pt",
+    "model_id": "nltk_macmorpho_tnt_tagger",
     "tagset": "",
     "tagset_homepage": "http://www.nilc.icmc.usp.br/macmorpho/macmorpho-manual.pdf",
-    "lang": "pt",
-    "model_id": "nltk_macmorpho_dtree_tagger",
-    "algo": "DecisionTreeClassifier",
+    "algo": "TnT",
+    "backoff_taggers": ["DefaultTagger"],
     "required_packages": ["nltk"]
 }
 db.update(MODEL_META)
 db.store()
 model_path = db.path.replace(".json", ".pkl")
-
 
 nltk.download('mac_morpho')
 
@@ -41,13 +43,19 @@ train_data = dataset[:cutoff]
 test_data = dataset[cutoff:]
 
 
-tagger = ClassifierBasedPOSTagger(
-    train=train_data,
-    classifier_builder=DecisionTreeClassifier.train)
+# initializing tagger
+ngram_tagger = joblib.load(model_path.replace("tnt", "ngram"))
 
+tagger = tnt.TnT(unk=ngram_tagger, Trained=True)
+
+# training
+tagger.train(train_data)
+
+# evaluating
 a = tagger.evaluate(test_data)
 
-print("Accuracy: ", a)
+print("Accuracy of TnT Tagger : ", a)  # 0.892467083962875
 db["accuracy"] = a
 db.store()
+
 joblib.dump(tagger, model_path)

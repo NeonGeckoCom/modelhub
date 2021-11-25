@@ -6,14 +6,14 @@ from json_database import JsonStorageXDG
 from nltk.corpus import brown
 from nltk.tag.sequential import ClassifierBasedPOSTagger
 
-db = JsonStorageXDG("nltk_macmorpho_clf_tagger", subfolder="ModelZoo/nltk")
+db = JsonStorageXDG("nltk_macmorpho_nb_tagger", subfolder="ModelZoo/nltk")
 MODEL_META = {
     "corpus": "macmorpho",
     "corpus_homepage": "http://www.nilc.icmc.usp.br/macmorpho/",
     "tagset": "",
     "tagset_homepage": "http://www.nilc.icmc.usp.br/macmorpho/macmorpho-manual.pdf",
     "lang": "pt",
-    "model_id": "nltk_macmorpho_clf_tagger",
+    "model_id": "nltk_macmorpho_nb_tagger",
     "algo": "NaiveBayes",
     "required_packages": ["nltk"]
 }

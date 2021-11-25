@@ -5,15 +5,15 @@ import nltk
 from json_database import JsonStorageXDG
 from nltk.tag.sequential import ClassifierBasedPOSTagger
 from nltk.classify import DecisionTreeClassifier
-db = JsonStorageXDG("nltk_floresta_clf_tagger", subfolder="ModelZoo/nltk")
+db = JsonStorageXDG("nltk_floresta_dtree_tagger", subfolder="ModelZoo/nltk")
 MODEL_META = {
     "corpus": "floresta",
     "corpus_homepage": "http://www.linguateca.pt/Floresta",
     "lang": "pt",
-    "model_id": "nltk_floresta_clf_tagger",
+    "model_id": "nltk_floresta_dtree_tagger",
      "tagset": "VISL (Portuguese)",
     "tagset_homepage": "https://visl.sdu.dk/visl/pt/symbolset-floresta.html",
-    "algo": "NaiveBayes",
+    "algo": "DecisionTreeClassifier",
     "required_packages": ["nltk"]
 }
 db.update(MODEL_META)

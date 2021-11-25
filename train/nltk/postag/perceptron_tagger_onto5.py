@@ -48,7 +48,7 @@ def read_ontonotes5(corpus_root):
                         yield toks
 
 
-corpus_root = "/home/user/PycharmProjects/nlp_workspace/biblioteca/corpora/OntoNotes-5.0-NER-BIO"
+corpus_root = "/home/user/PycharmProjects/nlp_workspace/biblioteca/corpora/onto5"
 reader = read_ontonotes5(corpus_root)
 
 data = list(reader)
@@ -59,7 +59,7 @@ test_data = data[int(len(data) * 0.9):]
 tagger = PerceptronTagger(load=False)
 tagger.train(train_data)
 a = tagger.evaluate(test_data)
-print("Accuracy of Brill tagger : ", a)  # 0.928649695021732
+print("Accuracy of tagger : ", a)  # 0.928649695021732
 
 print("Accuracy: ", a)
 db["accuracy"] = a
