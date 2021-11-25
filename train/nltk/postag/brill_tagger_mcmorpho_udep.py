@@ -1,11 +1,3 @@
-import json
-from os.path import dirname
-from os.path import join
-from random import shuffle
-from string import punctuation
-
-import joblib
-import nltk
 from random import shuffle
 from string import punctuation
 
