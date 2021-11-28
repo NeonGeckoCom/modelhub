@@ -13,7 +13,7 @@ class BaseNltkChunker(AbstractChunker, ChunkParserI):
             self.tagger = get_default_postagger(self.lang)
 
 
-class NamedEntityChunker(BaseNltkChunker):
+class ClassifierChunkParser(BaseNltkChunker):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.feature_detector = NltkFeatures.extract_iob_features
@@ -47,17 +47,5 @@ class PostagChunkParser(BaseNltkChunker):
         return conlltags2tree(iob_triplets)
 
 
-class ClassifierChunkParser(BaseNltkChunker):
-
-    def parse(self, sentence):
-        if isinstance(sentence, str):
-            sentence = self.tagger.tag(sentence)
-
-        chunks = self.chunker.tag(sentence)
-
-        # Transform the result from [((w1, t1), iob1), ...]
-        # to the preferred list of triplets format [(w1, t1, iob1), ...]
-        iob_triplets = [(w, t, c) for ((w, t), c) in chunks]
-
-        # Transform the list of triplets to nltk.Tree format
-        return conlltags2tree(iob_triplets)
+# syntactic sugar for NER tasks
+NamedEntityChunker = ClassifierChunkParser
