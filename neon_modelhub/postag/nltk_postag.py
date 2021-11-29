@@ -21,7 +21,8 @@ class NltkPostag(AbstractPostagger):
 def get_default_postagger(lang="en"):
     tagger = None
     if lang == "en":
-        model_id = ""  # use nltk defaults (?)
+        model_id = "nltk_brown_udep_perceptron_tagger"
+        tagger = load_model(model_id)
     if lang == "pt":
         model_id = "nltk_macmorpho_udep_perceptron_tagger"
         tagger = load_model(model_id)
