@@ -17,7 +17,7 @@ MODEL_META = {
     "tagset": "",
     "tagset_homepage": "http://www.nilc.icmc.usp.br/macmorpho/macmorpho-manual.pdf",
     "algo": "TnT",
-    "backoff_taggers": ["DefaultTagger"],
+    "backoff_taggers": ["nltk_macmorpho_ngram_tagger"],
     "required_packages": ["nltk"]
 }
 db.update(MODEL_META)

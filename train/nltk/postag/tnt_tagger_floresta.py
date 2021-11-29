@@ -17,7 +17,7 @@ MODEL_META = {
     "tagset": "VISL (Portuguese)",
     "tagset_homepage": "https://visl.sdu.dk/visl/pt/symbolset-floresta.html",
     "algo": "TnT",
-    "backoff_taggers": ["DefaultTagger"],
+    "backoff_taggers": ["nltk_floresta_ngram_tagger"],
     "required_packages": ["nltk"]
 }
 db.update(MODEL_META)

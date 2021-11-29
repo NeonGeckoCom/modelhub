@@ -16,7 +16,7 @@ MODEL_META = {
     "model_id": "nltk_treebank_tnt_tagger",
     "tagset": "Penn Treebank",
     "algo": "TnT",
-    "backoff_taggers": ["DefaultTagger"],
+    "backoff_taggers": ["nltk_treebank_ngram_tagger"],
     "required_packages": ["nltk"]
 }
 db.update(MODEL_META)

@@ -16,6 +16,7 @@ MODEL_META = {
     "model_id": "nltk_brown_tnt_tagger",
     "tagset": "brown",
     "algo": "TnT",
+    "backoff_taggers": ["nltk_brown_ngram_tagger"],
     "required_packages": ["nltk"]
 }
 db.update(MODEL_META)
