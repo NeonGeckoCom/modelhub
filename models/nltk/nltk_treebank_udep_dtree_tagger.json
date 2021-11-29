@@ -1,0 +1,11 @@
+{
+    "corpus": "treebank",
+    "lang": "en",
+    "model_id": "nltk_treebank_udep_dtree_tagger",
+    "tagset": "Universal Dependencies",
+    "algo": "DecisionTreeClassifier",
+    "required_packages": [
+        "nltk"
+    ],
+    "accuracy": 0.5587833219412167
+}

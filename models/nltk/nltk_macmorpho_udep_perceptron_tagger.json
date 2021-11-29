@@ -8,5 +8,5 @@
     "required_packages": [
         "nltk"
     ],
-    "accuracy": 0.9746087436263249
+    "accuracy": 0.9745301535688111
 }

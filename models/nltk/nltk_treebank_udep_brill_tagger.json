@@ -1,0 +1,20 @@
+{
+    "corpus": "treebank",
+    "corpus_homepage": "http://www.hit.uib.no/icame/brown/bcm.html",
+    "model_id": "nltk_treebank_udep_brill_tagger",
+    "tagset": "Universal Dependencies",
+    "lang": "en",
+    "algo": "BrillTaggerTrainer",
+    "backoff_taggers": [
+        "DefaultTagger",
+        "AffixTagger",
+        "RegexpTagger",
+        "UnigramTagger",
+        "BigramTagger",
+        "TrigramTagger"
+    ],
+    "required_packages": [
+        "nltk"
+    ],
+    "accuracy": 0.9827803079592279
+}

@@ -1,0 +1,14 @@
+{
+    "corpus": "treebank",
+    "lang": "en",
+    "model_id": "nltk_treebank_udep_tnt_tagger",
+    "tagset": "Universal Dependencies",
+    "algo": "TnT",
+    "backoff_taggers": [
+        "nltk_treebank_udep_ngram_tagger"
+    ],
+    "required_packages": [
+        "nltk"
+    ],
+    "accuracy": 0.9657340862422998
+}
