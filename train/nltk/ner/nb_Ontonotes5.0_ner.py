@@ -2,8 +2,8 @@ import joblib
 from json_database import JsonStorageXDG
 from nltk.tag import ClassifierBasedTagger
 
-from neon_modelhub.chunkers.nltk_chunkers import NamedEntityChunker, conlltags2tree
-from neon_modelhub.features.nltk_feats import NltkFeatures
+from neon_classic_modelhub.chunkers.nltk_chunkers import NamedEntityChunker, conlltags2tree
+from neon_classic_modelhub.features.nltk_feats import NltkFeatures
 
 db = JsonStorageXDG("nltk_onto5_nb_NER", subfolder="ModelZoo/nltk")
 MODEL_META = {
@@ -17,7 +17,7 @@ MODEL_META = {
                  'LAW', 'PRODUCT', 'ORDINAL', 'ORG', 'QUANTITY',
                  'CARDINAL', 'LOC', 'DATE', 'WORK_OF_ART', 'NORP',
                  'LANGUAGE', 'MONEY', 'PERCENT'],
-    "required_packages": ["nltk", "neon_modelhub"]
+    "required_packages": ["nltk", "neon_classic_modelhub"]
 }
 db.update(MODEL_META)
 db.store()

@@ -6,7 +6,7 @@ from json_database import JsonStorageXDG
 
 import biblioteca
 from biblioteca.corpora.external import NILC
-from neon_modelhub import load_model
+from neon_classic_modelhub import load_model
 
 db = JsonStorageXDG("nltk_nilc_brill_tagger", subfolder="ModelZoo/nltk")
 MODEL_META = {

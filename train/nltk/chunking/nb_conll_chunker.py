@@ -7,8 +7,8 @@ from nltk.chunk import tree2conlltags
 from nltk.corpus import conll2000
 from nltk.tag import ClassifierBasedTagger
 
-from neon_modelhub.chunkers.nltk_chunkers import ClassifierChunkParser
-from neon_modelhub.features.nltk_feats import NltkFeatures
+from neon_classic_modelhub.chunkers.nltk_chunkers import ClassifierChunkParser
+from neon_classic_modelhub.features.nltk_feats import NltkFeatures
 
 db = JsonStorageXDG("nltk_conll2000_nb_chunker", subfolder="ModelZoo/nltk")
 MODEL_META = {
@@ -17,7 +17,7 @@ MODEL_META = {
     "tagset": "conll_iob",
     "lang": "en",
     "algo": "NaiveBayes",
-    "required_packages": ["nltk", "neon_modelhub"]
+    "required_packages": ["nltk", "neon_classic_modelhub"]
 }
 db.update(MODEL_META)
 db.store()

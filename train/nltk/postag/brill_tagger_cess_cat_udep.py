@@ -5,7 +5,7 @@ import nltk
 from json_database import JsonStorageXDG
 
 import biblioteca
-from neon_modelhub import load_model
+from neon_classic_modelhub import load_model
 
 biblioteca.download("cess_cat_udep")
 cess = biblioteca.load_corpus("cess_cat_udep")

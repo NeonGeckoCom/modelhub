@@ -1,9 +1,9 @@
 from nltk.chunk import ChunkParserI
 from nltk.chunk import conlltags2tree
 
-from neon_modelhub.chunkers import AbstractChunker
-from neon_modelhub.features.nltk_feats import NltkFeatures
-from neon_modelhub.postag.nltk_postag import get_default_postagger
+from neon_classic_modelhub.chunkers import AbstractChunker
+from neon_classic_modelhub.features.nltk_feats import NltkFeatures
+from neon_classic_modelhub.postag.nltk_postag import get_default_postagger
 
 
 class BaseNltkChunker(AbstractChunker, ChunkParserI):

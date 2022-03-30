@@ -7,7 +7,7 @@ from nltk import TrigramTagger, BigramTagger, UnigramTagger
 from nltk.chunk import tree2conlltags
 from nltk.corpus import conll2000
 
-from neon_modelhub.chunkers.nltk_chunkers import PostagChunkParser
+from neon_classic_modelhub.chunkers.nltk_chunkers import PostagChunkParser
 
 db = JsonStorageXDG("nltk_conll2000_ngram_ptchunker", subfolder="ModelZoo/nltk")
 MODEL_META = {
@@ -17,7 +17,7 @@ MODEL_META = {
     "lang": "en",
     "algo": "TrigramTagger",
     "backoff_taggers": ["UnigramTagger", "BigramTagger", "TrigramTagger"],
-    "required_packages": ["nltk", "neon_modelhub"]
+    "required_packages": ["nltk", "neon_classic_modelhub"]
 }
 db.update(MODEL_META)
 db.store()

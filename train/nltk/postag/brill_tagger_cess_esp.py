@@ -4,7 +4,7 @@ import joblib
 import nltk
 from json_database import JsonStorageXDG
 
-from neon_modelhub import load_model
+from neon_classic_modelhub import load_model
 
 db = JsonStorageXDG("nltk_cess_esp_brill_tagger", subfolder="ModelZoo/nltk")
 MODEL_META = {

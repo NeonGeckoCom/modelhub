@@ -1,7 +1,7 @@
 from nltk import pos_tag, word_tokenize
 
-from neon_modelhub import load_model
-from neon_modelhub.postag import AbstractPostagger
+from neon_classic_modelhub import load_model
+from neon_classic_modelhub.postag import AbstractPostagger
 
 
 class NltkPostag(AbstractPostagger):
@@ -20,6 +20,7 @@ class NltkPostag(AbstractPostagger):
 
 def get_default_postagger(lang="en"):
     tagger = None
+    lang = lang.split("-")[0]
     if lang == "en":
         model_id = "nltk_brown_udep_perceptron_tagger"
         tagger = load_model(model_id)

@@ -6,9 +6,9 @@ from json_database import JsonStorageXDG
 from nltk import pos_tag
 from nltk.tag import ClassifierBasedTagger
 
-from neon_modelhub.chunkers.nltk_chunkers import NamedEntityChunker, \
+from neon_classic_modelhub.chunkers.nltk_chunkers import NamedEntityChunker, \
     conlltags2tree
-from neon_modelhub.features.nltk_feats import NltkFeatures
+from neon_classic_modelhub.features.nltk_feats import NltkFeatures
 
 db = JsonStorageXDG("nltk_WNUT17_nb_NER", subfolder="ModelZoo/nltk")
 
@@ -21,7 +21,7 @@ MODEL_META = {
     "algo": "NaiveBayes",
     "entitíes": ['group', 'person', 'product', 'corporation', 'location',
                  'creative-work'],
-    "required_packages": ["nltk", "neon_modelhub"]
+    "required_packages": ["nltk", "neon_classic_modelhub"]
 }
 db.update(MODEL_META)
 db.store()

@@ -5,7 +5,7 @@ from json_database import JsonStorageXDG
 from nltk.corpus import treebank
 from nltk.tag import brill, brill_trainer
 
-from neon_modelhub import load_model
+from neon_classic_modelhub import load_model
 
 db = JsonStorageXDG("nltk_treebank_udep_brill_tagger", subfolder="ModelZoo/nltk")
 MODEL_META = {

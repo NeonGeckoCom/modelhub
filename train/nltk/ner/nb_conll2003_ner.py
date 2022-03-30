@@ -2,9 +2,9 @@ import joblib
 from json_database import JsonStorageXDG
 from nltk.tag import ClassifierBasedTagger
 
-from neon_modelhub.chunkers.nltk_chunkers import NamedEntityChunker, \
+from neon_classic_modelhub.chunkers.nltk_chunkers import NamedEntityChunker, \
     conlltags2tree
-from neon_modelhub.features.nltk_feats import NltkFeatures
+from neon_classic_modelhub.features.nltk_feats import NltkFeatures
 
 db = JsonStorageXDG("nltk_CONLL2003_nb_NER", subfolder="ModelZoo/nltk")
 MODEL_META = {
@@ -15,7 +15,7 @@ MODEL_META = {
     "tagset": "conll_iob",
     "algo": "NaiveBayes",
     "entitíes": ['ORG', 'LOC', 'MISC', 'PER'],
-    "required_packages": ["nltk", "neon_modelhub"]
+    "required_packages": ["nltk", "neon_classic_modelhub"]
 }
 db.update(MODEL_META)
 db.store()
@@ -77,5 +77,10 @@ def accuracy_test():
     db.store()
 
 
-train()
+#train()
 accuracy_test()  # 0.8743839197702824
+
+
+chunker = NamedEntityChunker(model_id=MODEL_META["model_id"])
+r = chunker.parse("London is a great city")
+print(r)

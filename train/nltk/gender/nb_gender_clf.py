@@ -6,7 +6,7 @@ from nltk import NaiveBayesClassifier
 import nltk
 from nltk.classify import accuracy
 from nltk.corpus import names
-from neon_modelhub.features.nltk_feats import NltkFeatures
+from neon_classic_modelhub.features.nltk_feats import NltkFeatures
 
 db = JsonStorageXDG("nltk_gender_nb_clf", subfolder="ModelZoo/nltk")
 MODEL_META = {
@@ -15,7 +15,7 @@ MODEL_META = {
     "corpus_homepage": "",
     "model_id": "nltk_gender_nb_clf",
     "algo": "NaiveBayesClassifier",
-    "required_packages": ["nltk", "neon_modelhub"]
+    "required_packages": ["nltk", "neon_classic_modelhub"]
 }
 db.update(MODEL_META)
 db.store()

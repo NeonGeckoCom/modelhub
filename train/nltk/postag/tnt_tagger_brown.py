@@ -6,7 +6,7 @@ from json_database import JsonStorageXDG
 from nltk.corpus import brown
 from nltk.tag import tnt
 
-from neon_modelhub import load_model
+from neon_classic_modelhub import load_model
 
 db = JsonStorageXDG("nltk_brown_tnt_tagger", subfolder="ModelZoo/nltk")
 MODEL_META = {

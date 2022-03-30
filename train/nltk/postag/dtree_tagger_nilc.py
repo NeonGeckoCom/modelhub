@@ -27,6 +27,8 @@ biblioteca.download("NILC_taggers")
 nilc = NILC()
 
 data = [s for s in nilc.tagged_sentences()]
+print(data)
+exit()
 random.shuffle(data)
 cutoff = int(len(data) * 0.9)
 train_data = data[:cutoff]

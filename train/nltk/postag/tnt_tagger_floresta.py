@@ -5,7 +5,7 @@ import nltk
 from json_database import JsonStorageXDG
 from nltk.tag import tnt
 
-from neon_modelhub import load_model
+from neon_classic_modelhub import load_model
 
 db = JsonStorageXDG("nltk_floresta_tnt_tagger", subfolder="ModelZoo/nltk")
 

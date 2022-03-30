@@ -5,7 +5,7 @@ import joblib
 import requests
 import xdg.BaseDirectory
 
-from neon_modelhub.manifest import MANIFEST
+from neon_classic_modelhub.manifest import MANIFEST
 
 MODELS_DIR = join(xdg.BaseDirectory.xdg_cache_home, "ModelZoo")
 

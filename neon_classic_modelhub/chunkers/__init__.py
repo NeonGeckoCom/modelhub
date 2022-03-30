@@ -1,4 +1,4 @@
-from neon_modelhub import load_model
+from neon_classic_modelhub import load_model
 
 
 class AbstractChunker:
